@@ -18,19 +18,40 @@ import org.springframework.context.annotation.Bean;
 public class NoteServiceApplication {
 
 	public static final String TOPIC_EXCHANGE_NAME ="Note-exchange";
-	public static final String QUEUE_NAME ="Note-queue";
-	public static final String ROUTING_KEY ="Note.#";
+	public static final String QUEUE_NAME_CREATE ="Note-queue-create";
+	public static final String QUEUE_NAME_UPDATE ="Note-queue-update";
+	public static final String QUEUE_NAME_DELETE ="Note-queue-delete";
+	public static final String ROUTING_KEY_CREATE ="Note.queue.create";
+	public static final String ROUTING_KEY_UPDATE ="Note.queue.update";
+	public static final String ROUTING_KEY_DELETE ="Note.queue.delete";
 
 	@Bean
-	Queue queue(){return new Queue(QUEUE_NAME,false); }
+	Queue queueCreate(){return new Queue(QUEUE_NAME_CREATE,false); }
+
+	@Bean
+	Queue queueUpdate(){return new Queue(QUEUE_NAME_UPDATE,false); }
+
+	@Bean
+	Queue queueDelete(){return new Queue(QUEUE_NAME_DELETE,false); }
 
 	@Bean
 	TopicExchange exchange(){return new TopicExchange(TOPIC_EXCHANGE_NAME);}
 
 	@Bean
-	Binding binding(Queue queue, TopicExchange exchange){
-		return  BindingBuilder.bind(queue).to(exchange).with((ROUTING_KEY));
+	Binding bindingCreate(Queue queueCreate, TopicExchange exchange){
+		return  BindingBuilder.bind(queueCreate).to(exchange).with((ROUTING_KEY_CREATE));
 	}
+
+	@Bean
+	Binding bindingUpdate(Queue queueUpdate, TopicExchange exchange){
+		return  BindingBuilder.bind(queueUpdate).to(exchange).with((ROUTING_KEY_UPDATE));
+	}
+
+	@Bean
+	Binding bindingDelete(Queue queueDelete, TopicExchange exchange){
+		return  BindingBuilder.bind(queueDelete).to(exchange).with((ROUTING_KEY_DELETE));
+	}
+
 	@Bean
 	public Jackson2JsonMessageConverter jackson2JsonMessageConverter() {return new Jackson2JsonMessageConverter();}
 

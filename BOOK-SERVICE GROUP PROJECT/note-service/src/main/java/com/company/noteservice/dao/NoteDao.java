@@ -8,7 +8,7 @@ import java.awt.print.Book;
 import java.util.List;
 
 @Repository
-public interface NoteDao extends JpaRepository<Note, Integer > {
+public interface NoteDao extends JpaRepository<Note, Integer> {
 
     List<Note>getNoteByBookId(int bookId);
 
