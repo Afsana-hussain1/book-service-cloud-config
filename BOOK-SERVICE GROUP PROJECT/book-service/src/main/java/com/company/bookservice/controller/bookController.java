@@ -1,54 +1,83 @@
 package com.company.bookservice.controller;
 
 
+import com.company.bookservice.ServiceLayer.BookServiceLayer;
+import com.company.bookservice.model.Book;
+import com.company.bookservice.model.Note;
+import com.company.bookservice.viewmodels.BookServiceViewModel;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
 @RefreshScope
-@RequestMapping("/book")
 public class bookController {
 
     @Autowired
-    NoteDao noteDao;
+    BookServiceLayer bookServiceLayer;
 
-    @GetMapping( "/{id}")
-    public Note getNoteById(@PathVariable int id){
-        return null;
+
+    public bookController(BookServiceLayer bookServiceLayer){
+        this.bookServiceLayer = bookServiceLayer;
     }
 
-    @GetMapping("/book/{bookId}")
-    public List<Note> getNoteByBookId(@PathVariable int bookId){
-        return null;
+    @GetMapping( "/notes/{id}")
+    public Note getNoteById(@PathVariable int id) throws IOException {
+        return bookServiceLayer.getNoteById(id);
     }
 
-    @GetMapping("")
-    public List<Note> getAllNotes(){
-        return null;
+    @GetMapping("/notes/book/{bookId}")
+    public List<Note> getNoteByBookId(@PathVariable int bookId) throws IOException {
+        return bookServiceLayer.getNotesByBookId(bookId);
     }
 
-    @PostMapping("")
-    @RabbitListener(queues = NoteServiceApplication.QUEUE_NAME_CREATE)
-    public Note createNote(@RequestBody Note note){
-        return null;
+    @GetMapping("/notes")
+    public List<Note> getAllNotes() throws IOException {
+        return bookServiceLayer.getAllNotes();
     }
 
-    @PutMapping("/{id}")
-    @RabbitListener(queues = NoteServiceApplication.QUEUE_NAME_UPDATE)
+    @PostMapping("/notes")
+    public void createNote(@RequestBody Note note){
+        bookServiceLayer.createNote(note);
+    }
+
+    @PutMapping("/notes")
     public void updateNote(@RequestBody Note note){
-
-        System.out.println(note.toString());
-
-        noteDao.save(note);
+        bookServiceLayer.updateNote(note);
     }
 
-    @DeleteMapping("/{id}")
-    @RabbitListener(queues = NoteServiceApplication.QUEUE_NAME_DELETE)
+    @DeleteMapping("/notes/{id}")
     public void deleteNote(@PathVariable int id){
-        noteDao.deleteById(id);
+        bookServiceLayer.deleteNote(id);
+    }
+
+
+    @GetMapping( "/books/{id}")
+    public BookServiceViewModel getBookById(@PathVariable int id) throws IOException {
+        return bookServiceLayer.getBook(id);
+    }
+
+    @GetMapping("/books")
+    public List<BookServiceViewModel> getAllBooks() throws IOException {
+        return bookServiceLayer.getAllBooks();
+    }
+
+    @PostMapping("/books")
+    public BookServiceViewModel createBook(@RequestBody BookServiceViewModel bookServiceViewModel) throws IOException {
+        return bookServiceLayer.createBook(bookServiceViewModel);
+    }
+
+    @PutMapping("/books")
+    public void updateBook(@RequestBody BookServiceViewModel bookServiceViewModel) throws IOException {
+            bookServiceLayer.updateBook(bookServiceViewModel);
+    }
+
+    @DeleteMapping("/books/{id}")
+    public void deleteBook(@PathVariable int id){
+        bookServiceLayer.deleteBook(id);
     }
 }

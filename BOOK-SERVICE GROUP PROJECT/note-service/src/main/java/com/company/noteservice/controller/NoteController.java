@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 @RefreshScope
 @RequestMapping("/notes")
-public class NoteController {
+public class  NoteController {
 
     @Autowired
     NoteDao noteDao;
@@ -36,22 +36,19 @@ public class NoteController {
 
     @PostMapping("")
     @RabbitListener(queues = NoteServiceApplication.QUEUE_NAME_CREATE)
-    public Note createNote(@RequestBody Note note){
-        return noteDao.save(note);
+    public void createNote(Note note){
+       noteDao.save(note);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("")
     @RabbitListener(queues = NoteServiceApplication.QUEUE_NAME_UPDATE)
-    public void updateNote(@RequestBody Note note){
-
-        System.out.println(note.toString());
-
+    public void updateNote(Note note){
         noteDao.save(note);
     }
 
     @DeleteMapping("/{id}")
     @RabbitListener(queues = NoteServiceApplication.QUEUE_NAME_DELETE)
-    public void deleteNote(@PathVariable int id){
+    public void deleteNote(int id){
         noteDao.deleteById(id);
     }
 

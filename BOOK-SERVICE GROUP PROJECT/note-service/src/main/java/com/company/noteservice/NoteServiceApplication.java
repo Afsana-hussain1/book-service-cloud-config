@@ -17,13 +17,13 @@ import org.springframework.context.annotation.Bean;
 @EnableEurekaClient
 public class NoteServiceApplication {
 
-	public static final String TOPIC_EXCHANGE_NAME ="Note-exchange";
+	public static final String TOPIC_EXCHANGE_NAME ="note-exchange";
 	public static final String QUEUE_NAME_CREATE ="Note-queue-create";
 	public static final String QUEUE_NAME_UPDATE ="Note-queue-update";
 	public static final String QUEUE_NAME_DELETE ="Note-queue-delete";
-	public static final String ROUTING_KEY_CREATE ="Note.queue.create";
-	public static final String ROUTING_KEY_UPDATE ="Note.queue.update";
-	public static final String ROUTING_KEY_DELETE ="Note.queue.delete";
+	public static final String ROUTING_KEY_CREATE ="note.queue.create";
+	public static final String ROUTING_KEY_UPDATE ="note.queue.update";
+	public static final String ROUTING_KEY_DELETE ="note.queue.delete";
 
 	@Bean
 	Queue queueCreate(){return new Queue(QUEUE_NAME_CREATE,false); }

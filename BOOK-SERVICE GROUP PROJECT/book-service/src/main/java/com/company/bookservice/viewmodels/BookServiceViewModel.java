@@ -1,5 +1,7 @@
 package com.company.bookservice.viewmodels;
 
+import com.company.bookservice.model.Note;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -10,7 +12,7 @@ public class BookServiceViewModel {
     private int bookId;
     private String title;
     private String author;
-    private List<NoteViewModel> noteVMList = new ArrayList<>();
+    private List<Note> noteList = new ArrayList<>();
 
     public int getBookId() {
         return bookId;
@@ -36,28 +38,28 @@ public class BookServiceViewModel {
         this.author = author;
     }
 
-    public List<NoteViewModel> getNoteVMList() {
-        return noteVMList;
+    public List<Note> getNoteList() {
+        return noteList;
     }
 
-    public void setNoteVMList(List<NoteViewModel> noteVMList) {
-        this.noteVMList = noteVMList;
+    public void setNoteList(List<Note> noteList) {
+        this.noteList = noteList;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof BookServiceViewModel)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         BookServiceViewModel that = (BookServiceViewModel) o;
         return bookId == that.bookId &&
                 title.equals(that.title) &&
                 author.equals(that.author) &&
-                noteVMList.equals(that.noteVMList);
+                noteList.equals(that.noteList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bookId, title, author, noteVMList);
+        return Objects.hash(bookId, title, author, noteList);
     }
 
     @Override
@@ -66,7 +68,7 @@ public class BookServiceViewModel {
                 "bookId=" + bookId +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
-                ", noteVMList=" + noteVMList +
+                ", noteList=" + noteList +
                 '}';
     }
 }

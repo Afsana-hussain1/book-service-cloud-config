@@ -1,40 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4dd001d6-8bc2-44e8-8be6-2856e0600f9d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/book-service-cloud-config.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/book-service/src/main/java/com/company/bookservice/ServiceLayer/BookServiceLayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/book-service/src/main/java/com/company/bookservice/viewmodels/BookServiceViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/src/main/java/com/company/bookservice/controller/bookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/src/main/java/com/company/bookservice/controller/bookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note-service/src/main/java/com/company/noteservice/MessageListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note-service/src/main/java/com/company/noteservice/NoteServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/note-service/src/main/java/com/company/noteservice/NoteServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note-service/src/main/java/com/company/noteservice/controller/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/note-service/src/main/java/com/company/noteservice/controller/NoteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note-service/src/main/java/com/company/noteservice/dao/NoteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/note-service/src/main/java/com/company/noteservice/dao/NoteDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note-service/src/main/java/com/company/noteservice/util/message/NoteEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/src/main/java/com/company/bookservice/viewmodels/NoteViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note-service/src/test/java/com/company/noteservice/controller/NoteControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/note-service/src/test/java/com/company/noteservice/controller/NoteControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cloud-config-service/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cloud-config-service/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cloud-config-service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cloud-config-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cloud-config-service/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cloud-config-service/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cloud-config-service/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cloud-config-service/src/main/java/com/trilogyed/cloudconfigservice/CloudConfigServiceApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cloud-config-service/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cloud-config-service/src/test/java/com/trilogyed/cloudconfigservice/CloudConfigServiceApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka-service-registry/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka-service-registry/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka-service-registry/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka-service-registry/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka-service-registry/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka-service-registry/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka-service-registry/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka-service-registry/src/main/java/com/trilogyed/eurekaserviceregistry/EurekaServiceRegistryApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka-service-registry/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka-service-registry/src/test/java/com/trilogyed/eurekaserviceregistry/EurekaServiceRegistryApplicationTests.java" beforeDir="false" />
-    </list>
+    <list default="true" id="4dd001d6-8bc2-44e8-8be6-2856e0600f9d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
